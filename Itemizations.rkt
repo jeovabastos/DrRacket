@@ -11,7 +11,19 @@
 ;; - Natural    means countdown is running and how many second left
 ;; - "Complete" means countdown is over
 
-;; (Define CD1 false)
-;; (Define CD2 10) ; just started running
-;; (Define CD3 1)  ; almost over
-;; (Define CD4 "Complete")
+(Define CD1 false)
+(Define CD2 10) ; just started running
+(Define CD3 1)  ; almost over
+(Define CD4 "Complete")
+
+#;
+(define (fn-for-countdown c)
+  (cond [(false? c) (...)]
+        [(and (number? c) (<= 1 c) (<= 10 c)) (... c)]
+        [else (...)]))
+
+;; Template rules used:
+;; - one of: 3 cases
+;; - atomic distinc: false
+;; - atomic non-distinct: Natural[1, 10]
+;; - atomic distinct: "Complete"
